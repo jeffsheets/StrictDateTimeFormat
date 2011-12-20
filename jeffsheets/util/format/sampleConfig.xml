@@ -1,0 +1,16 @@
+
+<mvc:annotation-driven conversion-service="myConversionService" />
+<bean id="myConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+	<property name="formatters">
+		<list>
+			<bean class="jeffsheets.util.format.StrictDateTimeFormatAnnotationFormatterFactory" />
+		</list>
+	</property>
+</bean>
+
+<!-- Additional config for webflow -->
+<webflow:flow-builder-services id="flowBuilderServices"
+	view-factory-creator="mvcViewFactoryCreator" conversion-service="defaultConversionService" />
+<bean id="defaultConversionService" class="org.springframework.binding.convert.service.DefaultConversionService">
+	<constructor-arg ref="myConversionService" />
+</bean>
