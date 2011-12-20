@@ -1,0 +1,12 @@
+
+Simple classes creating a @StrictDateTimeFormat annotation to apply to a DateTime field
+to strictly regex validate a String before parsing into a DateTime
+
+ex:
+
+@StrictDateTimeFormat
+private DateTime birthday;
+
+More detail is provided on the OPI blog from objectpartners.com
+
+Or feel free to contact me @sheetsj or jeffsheets at gmail dot com
